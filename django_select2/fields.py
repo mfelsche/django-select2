@@ -463,6 +463,7 @@ class HeavySelect2FieldBaseMixin(object):
             util.timer_end(t2)
             util.timer_end(t1)
 
+
 class HeavyChoiceField(ChoiceMixin, forms.Field):
     """
     Reimplements :py:class:`django.forms.TypedChoiceField` in a way which suites the use of big data.
@@ -577,19 +578,19 @@ class HeavyMultipleChoiceField(HeavyChoiceField):
 
 
 class HeavySelect2ChoiceField(HeavySelect2FieldBaseMixin, HeavyChoiceField):
-    "Heavy Select2 Choice field."
+    """Heavy Select2 Choice field."""
     widget = HeavySelect2Widget
 
 
 class HeavySelect2MultipleChoiceField(HeavySelect2FieldBaseMixin, HeavyMultipleChoiceField):
-    "Heavy Select2 Multiple Choice field."
+    """Heavy Select2 Multiple Choice field."""
     widget = HeavySelect2MultipleWidget
 
 
 ### Heavy field specialized for Models ###
 
 class HeavyModelSelect2ChoiceField(HeavySelect2FieldBaseMixin, ModelChoiceField):
-    "Heavy Select2 Choice field, specialized for Models."
+    """Heavy Select2 Choice field, specialized for Models."""
     widget = HeavySelect2Widget
 
     def __init__(self, *args, **kwargs):
@@ -598,7 +599,7 @@ class HeavyModelSelect2ChoiceField(HeavySelect2FieldBaseMixin, ModelChoiceField)
 
 
 class HeavyModelSelect2MultipleChoiceField(HeavySelect2FieldBaseMixin, ModelMultipleChoiceField):
-    "Heavy Select2 Multiple Choice field, specialized for Models."
+    """Heavy Select2 Multiple Choice field, specialized for Models."""
     widget = HeavySelect2MultipleWidget
 
     def __init__(self, *args, **kwargs):
