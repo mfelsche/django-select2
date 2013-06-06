@@ -31,8 +31,9 @@ class JSONResponseMixin(object):
         )
 
     def convert_context_to_json(self, context):
-        "Convert the context dictionary into a JSON object"
+        """Convert the context dictionary into a JSON object"""
         return json.dumps(context)
+
 
 class Select2View(JSONResponseMixin, View):
     """
